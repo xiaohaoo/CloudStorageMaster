@@ -5,3 +5,16 @@
 - [x] 上传文件
 - [ ] 下载文件
 - [ ] 文件管理
+
+#### Build
+
+```
+./gradlew build
+```
+
+## Authors
+- [xiaohaoo](https://github.com/xiaohaoo)
+
+## License
+
+[Apache License 2.0](LICENSE)
