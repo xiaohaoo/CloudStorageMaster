@@ -1,0 +1,36 @@
+plugins {
+    id 'java'
+    id 'maven-publish'
+}
+
+group 'com.github.xiaohaoo'
+version '1.0'
+repositories {
+    mavenCentral()
+}
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            groupId "$project.group"
+            artifactId "$project.name"
+            version "$project.version"
+            from components.java
+        }
+    }
+
+    repositories {
+        mavenLocal()
+    }
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+    implementation 'com.aliyun.oss:aliyun-sdk-oss:3.13.0'
+
+}
+
+test {
+    useJUnitPlatform()
+}
