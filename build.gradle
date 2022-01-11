@@ -3,8 +3,8 @@ plugins {
     id 'maven-publish'
 }
 
-group 'com.github.xiaohaoo'
-version '1.0'
+group 'com.xiaohaoo'
+version '1.1'
 repositories {
     mavenCentral()
 }
