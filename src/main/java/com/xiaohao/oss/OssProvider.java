@@ -10,7 +10,6 @@ import java.io.InputStream;
 public interface OssProvider {
     /**
      * 上传接口
-     *
      * @param bucketName  文件夹
      * @param key         文件名称
      * @param inputStream 上传文件
@@ -20,7 +19,6 @@ public interface OssProvider {
 
     /**
      * 判断文件是否存在
-     *
      * @param bucketName 文件夹
      * @param key        文件名称
      * @return 是否存在

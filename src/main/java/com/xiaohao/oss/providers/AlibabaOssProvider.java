@@ -20,8 +20,7 @@ public class AlibabaOssProvider implements OssProvider {
     private final OssProviderBuilder providerBuilder;
 
     /**
-     * 上传
-     *
+     * 上传文件
      * @param bucketName  存储桶
      * @param key         文件路径
      * @param inputStream 输入流
@@ -42,7 +41,6 @@ public class AlibabaOssProvider implements OssProvider {
 
     /**
      * 判断文件是否存在
-     *
      * @param bucketName 存储桶
      * @param key        文件路径
      * @return 是否存在

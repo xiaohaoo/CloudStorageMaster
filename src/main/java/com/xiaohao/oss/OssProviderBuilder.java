@@ -16,16 +16,11 @@ public class OssProviderBuilder {
     private String accessKeySecret;
     private String endPoint;
 
-    public enum ProviderOption {
-        ALIBABA,
-    }
-
     public OssProviderBuilder(String accessKeyId, String accessKeySecret, String endPoint) {
         this.accessKeyId = accessKeyId;
         this.accessKeySecret = accessKeySecret;
         this.endPoint = endPoint.replaceAll("http[s]?://", "");
     }
-
 
     public static OssProviderBuilder builder() {
         return new OssProviderBuilder();
@@ -46,7 +41,6 @@ public class OssProviderBuilder {
         return this;
     }
 
-
     public OssProvider build(ProviderOption option) {
         if (ProviderOption.ALIBABA.equals(option)) {
             return new AlibabaOssProvider(this);
@@ -56,6 +50,10 @@ public class OssProviderBuilder {
 
     public OssProvider build() {
         return build(ProviderOption.ALIBABA);
+    }
+
+    public enum ProviderOption {
+        ALIBABA,
     }
 
 
