@@ -1,36 +1,42 @@
-plugins {
-    id 'java'
-    id 'maven-publish'
+buildscript {
+    repositories {
+        mavenLocal()
+    }
+    dependencies {
+        classpath 'com.xiaohaoo:maven-publishing-gradle-plugin:1.0'
+    }
 }
 
-group 'com.xiaohaoo'
-version '1.1'
+plugins {
+    id 'java'
+}
 repositories {
     mavenCentral()
 }
 
-publishing {
-    publications {
-        mavenJava(MavenPublication) {
-            groupId "$project.group"
-            artifactId "$project.name"
-            version "$project.version"
-            from components.java
-        }
-    }
+group 'com.xiaohaoo'
+version '1.1'
 
-    repositories {
-        mavenLocal()
-    }
-}
+apply plugin: 'com.xiaohaoo.maven-publishing'
 
 dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
     implementation 'com.aliyun.oss:aliyun-sdk-oss:3.13.0'
-
+    compileOnly 'org.projectlombok:lombok:1.18.22'
+    annotationProcessor 'org.projectlombok:lombok:1.18.22'
+    testCompileOnly 'org.projectlombok:lombok:1.18.22'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.22'
 }
 
 test {
     useJUnitPlatform()
+}
+javadoc {
+    enabled = false
+}
+
+xiaohaoMavenPublishing {
+    url = "https://github.com/xiaohaoo/oss-provider"
+    description = "OSS工具类"
 }
