@@ -36,4 +36,4 @@ implementation group: 'com.xiaohaoo', name: 'oss-provider', version: '1.1'
 
 ## License
 
-[GNU AFFERO GENERAL PUBLIC LICENSE 3](LICENSE)
+[GNU Affero General Public License v3.0](LICENSE)
