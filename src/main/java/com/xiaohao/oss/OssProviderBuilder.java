@@ -54,7 +54,7 @@ public class OssProviderBuilder {
     }
 
     public OssProviderBuilder endPoint(String endPoint) {
-        this.endPoint = endPoint;
+        this.endPoint = endPoint.replaceAll("http[s]?://", "");
         return this;
     }
 
@@ -70,6 +70,9 @@ public class OssProviderBuilder {
     }
 
     public enum ProviderOption {
+        /**
+         * 阿里巴巴云存储
+         */
         ALIBABA,
     }
 
