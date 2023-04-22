@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2022 xiaohao
+ * Copyright (c) 2023 xiaohao
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as
@@ -15,17 +15,24 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-import org.junit.jupiter.api.Test;
+package com.xiaohao.oss;
 
-import java.io.IOException;
+import java.io.InputStream;
 
-/**
- * @author xiaohao
- * @version 1.0
- * @date 2022/1/23 2:55 PM
- */
-public class OssClientTest {
-    @Test
-    public void alibabaOssTest() throws IOException {
+public class CloudStorageService implements CloudStorage {
+    private final CloudStorage cloudStorage;
+
+    public CloudStorageService(CloudStorageFactory factory) {
+        this.cloudStorage = factory.create();
+    }
+
+    @Override
+    public String upload(String bucketName, String objectName, InputStream inputStream) {
+        return this.cloudStorage.upload(bucketName, objectName, inputStream);
+    }
+
+    @Override
+    public boolean isExist(String bucketName, String objectName) {
+        return this.cloudStorage.isExist(bucketName, objectName);
     }
 }
