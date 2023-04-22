@@ -25,6 +25,23 @@ implementation group: 'com.xiaohaoo', name: 'oss-provider', version: '1.1.0'
 
 ```
 
+## 使用方法
+
+```java
+import java.io.InputStream;
+
+public class Main {
+    public static void main(String[] args) {
+        String accessKeyId = "accessKeyId";
+        String accessKeySecret = "accessKeySecret";
+        String endpoint = "https://endpoint";
+        CloudStorageFactory cloudStorageFactory = new AliyunCloudStorageFactory(accessKeyId, accessKeySecret, endpoint);
+        CloudStorageService cloudStorageService = new CloudStorageService(cloudStorageFactory);
+        cloudStorageService.upload(bucketName, objectName, inputStream);
+    }
+}
+```
+
 ## Authors
 
 - [xiaohaoo](https://github.com/xiaohaoo)
