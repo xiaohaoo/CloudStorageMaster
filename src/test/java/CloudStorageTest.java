@@ -15,17 +15,10 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-import org.junit.jupiter.api.Test;
-
-import java.io.IOException;
-
 /**
  * @author xiaohao
  * @version 1.0
  * @date 2022/1/23 2:55 PM
  */
-public class OssClientTest {
-    @Test
-    public void alibabaOssTest() throws IOException {
-    }
+public class CloudStorageTest {
 }
