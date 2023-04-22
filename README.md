@@ -12,14 +12,14 @@
 ### 使用
 
 ```groovy
-implementation group: 'com.xiaohaoo', name: 'oss-provider', version: '1.1.0'
+implementation group: 'com.xiaohaoo', name: 'cloud-storage-master', version: '1.1.0'
 ```
 
 ```xml
 
 <dependency>
     <groupId>com.xiaohaoo</groupId>
-    <artifactId>oss-provider</artifactId>
+    <artifactId>cloud-storage-master</artifactId>
     <version>1.1.0</version>
 </dependency>
 
@@ -28,8 +28,6 @@ implementation group: 'com.xiaohaoo', name: 'oss-provider', version: '1.1.0'
 ## 使用方法
 
 ```java
-import java.io.InputStream;
-
 public class Main {
     public static void main(String[] args) {
         String accessKeyId = "accessKeyId";
