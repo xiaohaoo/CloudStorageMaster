@@ -18,7 +18,7 @@ repositories {
     mavenCentral()
 }
 
-group = 'com.xiaohaoo'
+group = 'com.xiaohaoo.storage'
 version = '1.1.0'
 
 
@@ -43,6 +43,6 @@ java {
 
 
 xiaohaoMavenPublishing {
-    url = "https://github.com/xiaohaoo/CloudStorageMaster"
+    url = "https://github.com/xiaohaoo/cloud-storage-master"
     description = "云存储工具服务"
 }

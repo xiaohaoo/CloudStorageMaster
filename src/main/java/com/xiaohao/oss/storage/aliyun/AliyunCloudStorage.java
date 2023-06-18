@@ -32,15 +32,13 @@ import java.io.InputStream;
  */
 public class AliyunCloudStorage implements CloudStorage {
 
-    private final String endpoint;
-
     private final OSS ossClient;
 
     protected AliyunCloudStorage(String accessKeyId, String accessKeySecret, String endpoint) {
         assert accessKeyId != null;
         assert accessKeySecret != null;
         assert endpoint != null;
-        this.endpoint = endpoint.replaceAll("http[s]?://", "");
+        endpoint = endpoint.replaceAll("http[s]?://", "");
         this.ossClient = new OSSClientBuilder().build(endpoint, accessKeyId, accessKeySecret);
     }
 
@@ -57,7 +55,8 @@ public class AliyunCloudStorage implements CloudStorage {
         try {
             PutObjectRequest putObjectRequest = new PutObjectRequest(bucketName, objectName, inputStream);
             ossClient.putObject(putObjectRequest);
-            return String.format("https://%s.%s/%s", bucketName, endpoint, objectName);
+            final String host = "oss.xiaohaoo.com";
+            return String.format("https://%s/%s", host, objectName);
         } finally {
             IOUtils.closeQuietly(inputStream);
         }
