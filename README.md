@@ -9,20 +9,20 @@
 - [x] 删除文件
 - [x] 文件断存在
 
-### 使用
+### 使用方法
+
+- groovy
 
 ```groovy
-implementation group: 'com.xiaohaoo', name: 'cloud-storage-master', version: '1.1.0'
+implementation platform("com.xiaohaoo:xiaohao-dependencies:1.0.1")
+implementation "com.xiaohaoo:cloud-storage-master"
 ```
 
-```xml
+- kotlin
 
-<dependency>
-    <groupId>com.xiaohaoo</groupId>
-    <artifactId>cloud-storage-master</artifactId>
-    <version>1.1.0</version>
-</dependency>
-
+```kotlin
+implementation(platform("com.xiaohaoo.dependencies:xiaohao-dependencies:1.0.1"))
+implementation("com.xiaohaoo:cloud-storage-master")
 ```
 
 ## 使用方法
